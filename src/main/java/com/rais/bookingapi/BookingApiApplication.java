@@ -11,23 +11,3 @@ public class BookingApiApplication {
 	}
 
 }
-
-// getAllMovies
-// getOneMovie
-
-// Movies
-// Long id
-// String title
-// ENUM status -> available, not available
-// createdAt
-// updatedAt
-
-// Studio
-// Long id
-// String name
-// int capacity
-
-// MovieStudio
-// Long id
-// Movie movie -> ManyToOne 
-// Studio studio -> ManyToOne
