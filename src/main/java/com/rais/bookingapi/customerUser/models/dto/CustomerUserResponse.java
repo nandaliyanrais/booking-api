@@ -1,4 +1,4 @@
-package com.rais.bookingapi.studio.models.dto.response;
+package com.rais.bookingapi.customerUser.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,10 +11,11 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudioNameResponse {
-
+public class CustomerUserResponse {
+    
     private Long id;
     private String name;
-    // private int capacity;
-    
+    private String username;
+    private String email;
+
 }

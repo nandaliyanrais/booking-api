@@ -26,6 +26,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
@@ -33,6 +34,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Movie {
     
     @Id
@@ -42,20 +44,20 @@ public class Movie {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
     private String description;
 
     @Column(nullable = false)
     private double duration;
 
     @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private Timestamp createdAt;
 
     @UpdateTimestamp
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "movie")
-    @Cascade(value = CascadeType.ALL)
+    @Cascade(value = CascadeType.PERSIST)
     private List<MovieSlot> movieSlots;
 
     public MovieResponse convertToResponse() {
@@ -74,7 +76,7 @@ public class Movie {
                 .build();
     }
 
-    public MovieCreateResponse convertToResponseCreate() {
+    public MovieCreateResponse convertToMovieCreateResponse() {
         return MovieCreateResponse.builder()
                 .id(this.id)
                 .title(this.title)
@@ -85,7 +87,7 @@ public class Movie {
                 .build();
     }
 
-    public MovieTitleResponse convertToResponseTitle(){
+    public MovieTitleResponse convertToMovieTitleResponse(){
         return MovieTitleResponse.builder()
                 .id(this.id)
                 .title(this.title)

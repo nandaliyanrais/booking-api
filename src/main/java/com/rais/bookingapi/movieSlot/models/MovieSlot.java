@@ -49,8 +49,8 @@ public class MovieSlot {
         return MovieSlotResponse.builder()
                 .id(this.id)
                 .jamTayang(this.jamTayang)
-                .movie(this.movie.convertToResponseTitle())
-                .studio(this.studio.convertToResponseStudio())
+                .movie(this.movie.convertToMovieTitleResponse())
+                .studio(this.studio.convertToStudioNameResponse())
                 .build();
     }
 
@@ -58,7 +58,7 @@ public class MovieSlot {
         return MovieSlotStudioResponse.builder()
                 .id(this.id)
                 .jamTayang(this.jamTayang)
-                .studio(this.studio.convertToResponseStudio())
+                .studio(this.studio.convertToStudioNameResponse())
                 .build();
     }
 
@@ -66,7 +66,7 @@ public class MovieSlot {
         return MovieSlotMovieTitleResponse.builder()
                 .id(this.id)
                 .jamTayang(this.jamTayang)
-                .movie(this.movie.convertToResponseTitle())
+                .movie(this.movie.convertToMovieTitleResponse())
                 .build();
     }
 

@@ -1,4 +1,4 @@
-package com.rais.bookingapi.validation;
+package com.rais.bookingapi.handler;
 
 import java.util.HashMap;
 import java.util.List;

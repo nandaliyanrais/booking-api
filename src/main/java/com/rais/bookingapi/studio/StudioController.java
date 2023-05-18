@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rais.bookingapi.common.EnableCallLogging;
 import com.rais.bookingapi.studio.models.Studio;
 import com.rais.bookingapi.studio.models.dto.request.StudioRequest;
 import com.rais.bookingapi.studio.models.dto.response.StudioCreateResponse;
@@ -49,6 +50,7 @@ public class StudioController {
     }
 
     @PostMapping("/studios")
+    @EnableCallLogging
     public ResponseEntity<StudioCreateResponse> createOne(@Valid @RequestBody StudioRequest studioRequest) {
         if (studioRequest.getName().isBlank()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -56,7 +58,7 @@ public class StudioController {
 
         Studio newStudio = studioRequest.convertToEntity();
         Studio saveStudio = this.studioService.createOne(newStudio);
-        StudioCreateResponse studioResponse = saveStudio.convertToResponseCreate();
+        StudioCreateResponse studioResponse = saveStudio.convertToStudioCreateResponse();
 
         return ResponseEntity.status(HttpStatus.CREATED).body(studioResponse);
     }

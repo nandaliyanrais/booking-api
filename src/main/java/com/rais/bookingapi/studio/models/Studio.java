@@ -26,6 +26,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
@@ -33,6 +34,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Studio {
 
     @Id
@@ -45,13 +47,14 @@ public class Studio {
     private int capacity;
 
     @CreationTimestamp
+    @Column(nullable = false, updatable = false)
     private Timestamp createdAt;
 
     @UpdateTimestamp
     private Timestamp updatedAt;
 
     @OneToMany(mappedBy = "studio")
-    @Cascade(value = CascadeType.ALL)
+    @Cascade(value = CascadeType.PERSIST) // untuk save
     private List<MovieSlot> movieSlots;
 
     public StudioResponse convertToResponse() {
@@ -70,7 +73,7 @@ public class Studio {
                 .build();
     }
 
-    public StudioCreateResponse convertToResponseCreate() {
+    public StudioCreateResponse convertToStudioCreateResponse() {
         return StudioCreateResponse.builder()
                 .id(this.id)
                 .name(this.name)
@@ -80,11 +83,11 @@ public class Studio {
                 .build();
     }
 
-    public StudioNameResponse convertToResponseStudio() {
+    public StudioNameResponse convertToStudioNameResponse() {
         return StudioNameResponse.builder()
                 .id(this.id)
                 .name(this.name)
-                .capacity(this.capacity)
+                // .capacity(this.capacity)
                 .build();
     }
 

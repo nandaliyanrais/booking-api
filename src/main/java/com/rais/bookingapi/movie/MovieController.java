@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rais.bookingapi.common.EnableCallLogging;
 import com.rais.bookingapi.movie.models.Movie;
 import com.rais.bookingapi.movie.models.dto.request.MovieRequest;
 import com.rais.bookingapi.movie.models.dto.response.MovieCreateResponse;
@@ -43,6 +44,7 @@ public class MovieController {
     }
 
     @PostMapping("/movies")
+    @EnableCallLogging
     public ResponseEntity<MovieCreateResponse> createOne(@Valid @RequestBody MovieRequest movieRequest) {
         if (movieRequest.getTitle().isBlank()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -50,7 +52,7 @@ public class MovieController {
 
         Movie newMovie = movieRequest.convertToEntity();
         Movie saveMovie = this.movieService.createOne(newMovie);
-        MovieCreateResponse movieResponse = saveMovie.convertToResponseCreate();
+        MovieCreateResponse movieResponse = saveMovie.convertToMovieCreateResponse();
         
         return ResponseEntity.status(HttpStatus.CREATED).body(movieResponse);
     }
