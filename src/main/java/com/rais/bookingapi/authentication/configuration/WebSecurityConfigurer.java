@@ -54,7 +54,7 @@ public class WebSecurityConfigurer {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeHttpRequests().requestMatchers("/tokens").permitAll().and()
                 .authorizeHttpRequests().requestMatchers("/register").permitAll().and()
-                .authorizeHttpRequests().requestMatchers(HttpMethod.GET, "/movies/**").permitAll().and()
+                .authorizeHttpRequests().requestMatchers("/movies**").permitAll().and()
                 .authorizeHttpRequests().requestMatchers(HttpMethod.GET, "/studios/**").permitAll().and()
                 .authorizeHttpRequests().anyRequest().authenticated();
 

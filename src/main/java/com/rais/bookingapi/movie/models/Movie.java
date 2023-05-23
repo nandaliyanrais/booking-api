@@ -21,6 +21,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -48,6 +49,10 @@ public class Movie {
 
     @Column(nullable = false)
     private double duration;
+
+    @OneToOne
+    @Cascade(CascadeType.ALL)
+    private Image image;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
