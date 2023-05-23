@@ -1,27 +1,26 @@
 package com.rais.bookingapi;
 
-import java.io.IOException;
-
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.multipart.MultipartResolver;
-import org.springframework.web.multipart.support.MultipartFilter;
+
+import com.rais.bookingapi.movie.ImageService;
+
+import jakarta.annotation.Resource;
 
 @SpringBootApplication
-public class BookingApiApplication {
+public class BookingApiApplication implements CommandLineRunner  {
 
-	// @Bean(name="filterMultipartResolver")    
-	// public MultipartFilter getMultipartResolver() throws IOException{        
-	// 	MultipartFilter resolver = new MultipartFilter();        
-	// 	resolver.setMultipartResolverBeanName(multipartresolver);      
-	// 	resolver.(5242880);	//5MB                 
-		
-	// 	return resolver;    
-	// }
+	@Resource
+	ImageService imageService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookingApiApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		imageService.init();
 	}
 
 }

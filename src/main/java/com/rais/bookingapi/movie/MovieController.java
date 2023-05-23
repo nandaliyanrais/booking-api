@@ -59,7 +59,6 @@ public class MovieController {
     }
 
     @PostMapping(value = "/movies", consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
-    @EnableCallLogging
     public ResponseEntity<MovieCreateResponse> createOne(@Valid @RequestPart("movieRequest") MovieRequest movieRequest, @RequestPart("image") MultipartFile imageFile) {
         if (movieRequest.getTitle().isBlank()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
