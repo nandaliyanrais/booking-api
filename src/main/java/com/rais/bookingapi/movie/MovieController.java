@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rais.bookingapi.common.EnableCallLogging;
+import com.rais.bookingapi.common.logging.EnableCallLogging;
 import com.rais.bookingapi.movie.models.Movie;
 import com.rais.bookingapi.movie.models.dto.request.MovieRequest;
 import com.rais.bookingapi.movie.models.dto.response.MovieCreateResponse;

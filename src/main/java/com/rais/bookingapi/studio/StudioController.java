@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rais.bookingapi.common.EnableCallLogging;
+import com.rais.bookingapi.common.logging.EnableCallLogging;
 import com.rais.bookingapi.studio.models.Studio;
 import com.rais.bookingapi.studio.models.dto.request.StudioRequest;
 import com.rais.bookingapi.studio.models.dto.response.StudioCreateResponse;
@@ -62,5 +62,8 @@ public class StudioController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(studioResponse);
     }
+
+    // tambahkan untuk get studio yang tidak ada movieslot
+    
 
 }

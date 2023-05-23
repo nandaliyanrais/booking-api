@@ -1,4 +1,4 @@
-package com.rais.bookingapi.customerUser.exception;
+package com.rais.bookingapi.customeruser.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

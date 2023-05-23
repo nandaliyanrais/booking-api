@@ -1,4 +1,4 @@
-package com.rais.bookingapi.common;
+package com.rais.bookingapi.common.logging;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

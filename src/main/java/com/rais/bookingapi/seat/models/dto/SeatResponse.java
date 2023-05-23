@@ -1,7 +1,7 @@
 package com.rais.bookingapi.seat.models.dto;
 
-import com.rais.bookingapi.customerUser.models.CustomerUser;
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
+import com.rais.bookingapi.customeruser.models.CustomerUser;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

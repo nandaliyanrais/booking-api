@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.rais.bookingapi.movie.exception.MovieNotFoundException;
 import com.rais.bookingapi.movie.models.Movie;
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
 import com.rais.bookingapi.studio.StudioService;
 import com.rais.bookingapi.studio.models.Studio;
 

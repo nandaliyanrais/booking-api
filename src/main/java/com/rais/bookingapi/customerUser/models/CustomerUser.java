@@ -1,17 +1,21 @@
-package com.rais.bookingapi.customerUser.models;
+package com.rais.bookingapi.customeruser.models;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.rais.bookingapi.customerUser.models.dto.CustomerUserResponse;
+import com.rais.bookingapi.applicationuser.ApplicationUser;
+import com.rais.bookingapi.customeruser.models.dto.CustomerUserResponse;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -35,6 +39,10 @@ public class CustomerUser {
     private String username;
 
     private String email;
+
+    @OneToOne
+    @Cascade(CascadeType.ALL)
+    private ApplicationUser applicationUser;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)

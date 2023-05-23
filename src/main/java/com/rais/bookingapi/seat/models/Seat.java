@@ -7,8 +7,8 @@ import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.rais.bookingapi.customerUser.models.CustomerUser;
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
+import com.rais.bookingapi.customeruser.models.CustomerUser;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
 import com.rais.bookingapi.seat.models.dto.SeatResponse;
 
 import jakarta.persistence.Column;
@@ -39,8 +39,10 @@ public class Seat {
 
     private String seatNumber;
 
-    @OneToMany(mappedBy = "seat")
-    @Cascade(value = CascadeType.ALL)
+    // @OneToMany(mappedBy = "seat")
+    // @Cascade(value = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "customer_user_id")
     private CustomerUser customerUser;
 
     @ManyToOne

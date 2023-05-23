@@ -1,4 +1,4 @@
-package com.rais.bookingapi.movieSlot;
+package com.rais.bookingapi.movieslot;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
-import com.rais.bookingapi.movieSlot.models.dto.response.MovieSlotResponse;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
+import com.rais.bookingapi.movieslot.models.dto.response.MovieSlotResponse;
 
 import lombok.RequiredArgsConstructor;
 

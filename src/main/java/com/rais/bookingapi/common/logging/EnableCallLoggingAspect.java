@@ -1,4 +1,4 @@
-package com.rais.bookingapi.common;
+package com.rais.bookingapi.common.logging;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

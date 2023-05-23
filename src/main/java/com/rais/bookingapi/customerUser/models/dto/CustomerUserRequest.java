@@ -1,6 +1,7 @@
-package com.rais.bookingapi.customerUser.models.dto;
+package com.rais.bookingapi.customeruser.models.dto;
 
-import com.rais.bookingapi.customerUser.models.CustomerUser;
+import com.rais.bookingapi.applicationuser.ApplicationUser;
+import com.rais.bookingapi.customeruser.models.CustomerUser;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -31,13 +32,23 @@ public class CustomerUserRequest {
     private String email;
 
     public CustomerUser convertToEntity() {
-        return CustomerUser.builder()
+        CustomerUser customerUser = CustomerUser.builder()
                 .id(this.id)
                 .name(this.name)
                 .username(this.username)
-                // .password(this.password)
                 .email(this.email)
                 .build();
+        ApplicationUser applicationUser = ApplicationUser.builder()
+                .name(name)
+                .username(username)
+                .email(email)
+                .password(password)
+                .build();
+        
+        customerUser.setApplicationUser(applicationUser);
+        applicationUser.setCustomerUser(customerUser);
+        
+        return customerUser;
     }
 
 }

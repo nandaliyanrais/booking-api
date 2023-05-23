@@ -12,8 +12,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import com.rais.bookingapi.movie.models.dto.response.MovieCreateResponse;
 import com.rais.bookingapi.movie.models.dto.response.MovieResponse;
 import com.rais.bookingapi.movie.models.dto.response.MovieTitleResponse;
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
-import com.rais.bookingapi.movieSlot.models.dto.response.MovieSlotStudioResponse;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
+import com.rais.bookingapi.movieslot.models.dto.response.MovieSlotStudioResponse;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

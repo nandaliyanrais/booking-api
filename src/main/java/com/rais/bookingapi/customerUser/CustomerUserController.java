@@ -1,4 +1,4 @@
-package com.rais.bookingapi.customerUser;
+package com.rais.bookingapi.customeruser;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rais.bookingapi.customerUser.models.CustomerUser;
-import com.rais.bookingapi.customerUser.models.dto.CustomerUserRequest;
-import com.rais.bookingapi.customerUser.models.dto.CustomerUserResponse;
+import com.rais.bookingapi.customeruser.models.CustomerUser;
+import com.rais.bookingapi.customeruser.models.dto.CustomerUserRequest;
+import com.rais.bookingapi.customeruser.models.dto.CustomerUserResponse;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

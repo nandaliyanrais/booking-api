@@ -1,4 +1,4 @@
-package com.rais.bookingapi.movieSlot.models.dto.response;
+package com.rais.bookingapi.movieslot.models.dto.response;
 
 import java.time.LocalDateTime;
 

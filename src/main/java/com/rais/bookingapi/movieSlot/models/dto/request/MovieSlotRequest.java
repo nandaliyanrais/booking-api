@@ -1,9 +1,9 @@
-package com.rais.bookingapi.movieSlot.models.dto.request;
+package com.rais.bookingapi.movieslot.models.dto.request;
 
 import java.time.LocalDateTime;
 
 import com.rais.bookingapi.movie.models.dto.request.MovieRequest;
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
 import com.rais.bookingapi.studio.models.dto.request.StudioRequest;
 
 import lombok.AllArgsConstructor;

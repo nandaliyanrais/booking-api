@@ -1,11 +1,11 @@
-package com.rais.bookingapi.movieSlot;
+package com.rais.bookingapi.movieslot;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.rais.bookingapi.movieSlot.exception.MovieSlotNotFoundException;
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
+import com.rais.bookingapi.movieslot.exception.MovieSlotNotFoundException;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
 
 import lombok.RequiredArgsConstructor;
 

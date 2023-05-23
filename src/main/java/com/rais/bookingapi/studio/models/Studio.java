@@ -9,8 +9,8 @@ import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.rais.bookingapi.movieSlot.models.MovieSlot;
-import com.rais.bookingapi.movieSlot.models.dto.response.MovieSlotMovieTitleResponse;
+import com.rais.bookingapi.movieslot.models.MovieSlot;
+import com.rais.bookingapi.movieslot.models.dto.response.MovieSlotMovieTitleResponse;
 import com.rais.bookingapi.studio.models.dto.response.StudioCreateResponse;
 import com.rais.bookingapi.studio.models.dto.response.StudioNameResponse;
 import com.rais.bookingapi.studio.models.dto.response.StudioResponse;

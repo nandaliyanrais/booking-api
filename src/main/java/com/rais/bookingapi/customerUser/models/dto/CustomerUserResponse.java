@@ -1,4 +1,4 @@
-package com.rais.bookingapi.customerUser.models.dto;
+package com.rais.bookingapi.customeruser.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

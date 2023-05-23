@@ -1,12 +1,12 @@
-package com.rais.bookingapi.movieSlot.models;
+package com.rais.bookingapi.movieslot.models;
 
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rais.bookingapi.movie.models.Movie;
-import com.rais.bookingapi.movieSlot.models.dto.response.MovieSlotMovieTitleResponse;
-import com.rais.bookingapi.movieSlot.models.dto.response.MovieSlotResponse;
-import com.rais.bookingapi.movieSlot.models.dto.response.MovieSlotStudioResponse;
+import com.rais.bookingapi.movieslot.models.dto.response.MovieSlotMovieTitleResponse;
+import com.rais.bookingapi.movieslot.models.dto.response.MovieSlotResponse;
+import com.rais.bookingapi.movieslot.models.dto.response.MovieSlotStudioResponse;
 import com.rais.bookingapi.studio.models.Studio;
 
 import jakarta.persistence.Entity;

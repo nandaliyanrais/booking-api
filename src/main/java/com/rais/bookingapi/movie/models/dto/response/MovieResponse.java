@@ -3,7 +3,7 @@ package com.rais.bookingapi.movie.models.dto.response;
 import java.sql.Timestamp;
 import java.util.List;
 
-import com.rais.bookingapi.movieSlot.models.dto.response.MovieSlotStudioResponse;
+import com.rais.bookingapi.movieslot.models.dto.response.MovieSlotStudioResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
