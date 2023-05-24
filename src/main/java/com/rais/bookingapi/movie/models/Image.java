@@ -28,4 +28,5 @@ public class Image {
 
     // @Column(name = "image", unique = false, nullable = false, length = 100000)
     private String url;
+    
 }

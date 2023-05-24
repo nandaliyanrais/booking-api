@@ -1,4 +1,4 @@
-package com.rais.bookingapi.handler;
+package com.rais.bookingapi.common.handler;
 
 import java.util.HashMap;
 import java.util.List;

@@ -20,6 +20,7 @@ public class BookingApiApplication implements CommandLineRunner  {
 
 	@Override
 	public void run(String... args) throws Exception {
+		// imageService.deleteAll(); // untuk delete images
 		imageService.init();
 	}
 

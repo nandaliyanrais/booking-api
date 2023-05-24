@@ -57,20 +57,6 @@ public class MovieController {
         return ResponseEntity.ok().contentType(MediaType.valueOf(image.getType())).body(resource.getContentAsByteArray());
     }
 
-    // @PostMapping("/movies")
-    // @EnableCallLogging
-    // public ResponseEntity<MovieCreateResponse> createOne(@Valid @RequestBody MovieRequest movieRequest) {
-    //     if (movieRequest.getTitle().isBlank()) {
-    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-    //     }
-
-    //     Movie newMovie = movieRequest.convertToEntity();
-    //     Movie saveMovie = this.movieService.createOne(newMovie);
-    //     MovieCreateResponse movieResponse = saveMovie.convertToMovieCreateResponse();
-        
-    //     return ResponseEntity.status(HttpStatus.CREATED).body(movieResponse);
-    // }
-
     @PostMapping(value = "/movies", consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<MovieCreateResponse> createOne(@Valid @RequestPart("movieRequest") MovieRequest movieRequest, @RequestPart("image") MultipartFile imageFile) {
         if (movieRequest.getTitle().isBlank()) {
@@ -86,5 +72,19 @@ public class MovieController {
         
         return ResponseEntity.status(HttpStatus.CREATED).body(movieResponse);
     }
+
+    // @PostMapping("/movies")
+    // @EnableCallLogging
+    // public ResponseEntity<MovieCreateResponse> createOne(@Valid @RequestBody MovieRequest movieRequest) {
+    //     if (movieRequest.getTitle().isBlank()) {
+    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    //     }
+
+    //     Movie newMovie = movieRequest.convertToEntity();
+    //     Movie saveMovie = this.movieService.createOne(newMovie);
+    //     MovieCreateResponse movieResponse = saveMovie.convertToMovieCreateResponse();
+        
+    //     return ResponseEntity.status(HttpStatus.CREATED).body(movieResponse);
+    // }
 
 }
