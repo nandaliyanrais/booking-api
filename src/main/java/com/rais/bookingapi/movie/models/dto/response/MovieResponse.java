@@ -22,6 +22,7 @@ public class MovieResponse {
     private String title;
     private String description;
     private double duration;
+    private String imageUrl;
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private List<MovieSlotStudioResponse> movieSlotResponses;

@@ -19,6 +19,7 @@ public class MovieCreateResponse {
     private String title;
     private String description;
     private double duration;
+    private String imageUrl;
     private Timestamp createdAt;
     private Timestamp updatedAt;
     

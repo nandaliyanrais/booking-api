@@ -66,6 +66,7 @@ public class Movie {
     private List<MovieSlot> movieSlots;
 
     public MovieResponse convertToResponse() {
+        String imageUrl = image.getUrl();
         List<MovieSlotStudioResponse> movieSlotResponses = this.movieSlots.stream()
                                                                 .sorted(Comparator.comparing(MovieSlot::getJamTayang))
                                                                 .map(MovieSlot::convertToResponseStudio)
@@ -75,6 +76,7 @@ public class Movie {
                 .title(this.title)
                 .description(this.description)
                 .duration(this.duration)
+                .imageUrl(imageUrl)
                 .createdAt(this.createdAt)
                 .updatedAt(this.updatedAt)
                 .movieSlotResponses(movieSlotResponses)
@@ -82,11 +84,13 @@ public class Movie {
     }
 
     public MovieCreateResponse convertToMovieCreateResponse() {
+        String imageUrl = image.getUrl();
         return MovieCreateResponse.builder()
                 .id(this.id)
                 .title(this.title)
                 .description(this.description)
                 .duration(this.duration)
+                .imageUrl(imageUrl)
                 .createdAt(this.createdAt)
                 .updatedAt(this.updatedAt)
                 .build();
