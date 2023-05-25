@@ -1,4 +1,4 @@
-package com.rais.bookingapi.movie.models;
+package com.rais.bookingapi.image.models;
 
 import java.io.ByteArrayOutputStream;
 import java.util.zip.Deflater;

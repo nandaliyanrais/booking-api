@@ -1,4 +1,4 @@
-package com.rais.bookingapi.movie.models;
+package com.rais.bookingapi.image.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

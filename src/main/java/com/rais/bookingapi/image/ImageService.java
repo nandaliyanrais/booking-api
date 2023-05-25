@@ -1,4 +1,4 @@
-package com.rais.bookingapi.movie;
+package com.rais.bookingapi.image;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.rais.bookingapi.movie.models.Image;
+import com.rais.bookingapi.image.models.Image;
 
 import lombok.RequiredArgsConstructor;
 

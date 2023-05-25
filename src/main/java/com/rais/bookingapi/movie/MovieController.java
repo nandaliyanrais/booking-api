@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.rais.bookingapi.movie.models.Image;
+import com.rais.bookingapi.image.ImageService;
+import com.rais.bookingapi.image.models.Image;
 import com.rais.bookingapi.movie.models.Movie;
 import com.rais.bookingapi.movie.models.dto.request.MovieRequest;
 import com.rais.bookingapi.movie.models.dto.response.MovieCreateResponse;
@@ -46,15 +47,6 @@ public class MovieController {
         MovieResponse movieResponse = existingMovie.convertToResponse();
 
         return ResponseEntity.ok(movieResponse);
-    }
-
-    @GetMapping("/movies/{id}/images")
-    public ResponseEntity<byte[]> getOneImageByMovie(@PathVariable("id") Long id) throws IOException {
-        Movie existingMovie = this.movieService.findOneById(id);
-        Image image = existingMovie.getImage();
-        Resource resource = this.imageService.load(image);
-
-        return ResponseEntity.ok().contentType(MediaType.valueOf(image.getType())).body(resource.getContentAsByteArray());
     }
 
     @PostMapping(value = "/movies", consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE})
