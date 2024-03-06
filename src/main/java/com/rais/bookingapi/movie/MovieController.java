@@ -1,10 +1,8 @@
 package com.rais.bookingapi.movie;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

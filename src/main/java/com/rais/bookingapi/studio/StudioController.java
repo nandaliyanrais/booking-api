@@ -48,7 +48,7 @@ public class StudioController {
 
         return ResponseEntity.ok(studioResponse);
     }
-
+    
     @PostMapping("/studios")
     @EnableCallLogging
     public ResponseEntity<StudioCreateResponse> createOne(@Valid @RequestBody StudioRequest studioRequest) {
